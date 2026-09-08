@@ -14,8 +14,12 @@ namespace ExerciceListe
         static void Main(string[] args)
         {
             var program = new Program();
-            program.Exercice125();
+            //program.Exercice125();
             //program.Exercice34();
+            //program.Exercice67();
+            //program.Exercice8();
+            //program.Exercice9();
+            program.Exercice10();
         }
 
         public void Exercice125()
@@ -111,6 +115,102 @@ namespace ExerciceListe
             foreach (int number in randomNumber)
             {
                 Console.WriteLine(number);
+            }
+        }
+        public void Exercice67()
+        {
+            Dictionary<string, string> myLand = new Dictionary<string, string>();
+            myLand.Add("FR", "France");
+            myLand.Add("DE", "Allemagne");
+            myLand.Add("IT", "Italie");
+            myLand.Add("ES", "Espagne");
+            myLand.Add("PT", "Portugal");
+            myLand.Add("BE", "Belgique");
+            myLand.Add("NL", "Pays-Bas");
+            myLand.Add("CH", "Suisse");
+
+            foreach (var land in myLand)
+            {
+                Console.WriteLine($"Code pays : {land.Key} - Pays : {land.Value}");
+            } Console.WriteLine();
+
+            Console.WriteLine("entrez un code pays à rechercher dans la liste");
+            string codeToSearch = Console.ReadLine().ToUpper();
+
+            if (myLand.ContainsKey(codeToSearch))
+            {
+                Console.WriteLine($"le pays correspondant au code {codeToSearch} est {myLand[codeToSearch]}");
+            }
+        }
+        public void Exercice8()
+        {
+            Dictionary<string, decimal> myProducts = new Dictionary<string, decimal>();
+            myProducts.Add("Pomme", 0.5m);
+            myProducts.Add("Banane", 0.3m);
+            myProducts.Add("Orange", 0.4m);
+            myProducts.Add("Cerise", 0.2m);
+
+            foreach (var product in myProducts)
+            {
+                Console.WriteLine($"{product.Key} est dans le panier");
+            }
+
+            Console.WriteLine("Tapez un produit à rechercher dans la liste");
+            string productToSearch = Console.ReadLine();
+
+            if (myProducts.ContainsKey(productToSearch))
+            {
+                Console.WriteLine($"Le produit {productToSearch} est disponible au prix de {myProducts[productToSearch]} euros.");
+            }
+        }
+
+        public void Exercice9()
+        {
+            decimal totalPrice = 0;
+            Dictionary<string, decimal> myProducts = new Dictionary<string, decimal>();
+            myProducts.Add("pomme", 0.5m);
+            myProducts.Add("banane", 0.3m);
+            myProducts.Add("orange", 0.4m);
+            myProducts.Add("cerise", 0.2m);
+
+            foreach (var product in myProducts)
+            {
+                Console.WriteLine($"{product.Key} est dans le panier");
+            }
+
+            while (true)
+            {
+                Console.WriteLine($"choisissez un produit à ajouter au panier - \"STOP\" pour arrêter");
+                string productToAdd = Console.ReadLine();
+                if (productToAdd.ToUpper() == "STOP")
+                {
+                    break;
+                }
+                totalPrice = totalPrice + myProducts[productToAdd];
+            }
+            Console.WriteLine($"Le prix total du panier est de {totalPrice} euros.");
+        }
+
+        public  void Exercice10()
+        {
+            Dictionary<string, int> dico = new Dictionary<string, int>();
+            Console.WriteLine("entrez un mot ou une phrase");
+            string input = Console.ReadLine();
+            foreach (var letter in input)
+            {
+                if (dico.ContainsKey(letter.ToString()))
+                {
+                    dico[letter.ToString()]++;
+                }
+                else
+                {
+                    dico[letter.ToString()] = 1;
+                }
+            }
+            
+            foreach (var item in dico.Keys)
+            {
+                Console.WriteLine($"il y a {dico[item]} fois le mot '{item}'");
             }
         }
     }
