@@ -9,7 +9,8 @@ namespace ExerciceListe
 {
     internal class Program
     {
-        //Exercice 1, 2 & 5 : Créez une liste de prénoms et affichez-les à l'écran. Ensuite, demandez à l'utilisateur d'ajouter un prénom à la liste et affichez la liste mise à jour + retour de position si présent.
+        //Exercice 1, 2 & 5 : Créez une liste de prénoms et affichez-les à l'écran. Ensuite,
+        //demandez à l'utilisateur d'ajouter un prénom à la liste et affichez la liste mise à jour + retour de position si présent.
         static void Main(string[] args)
         {
             var program = new Program();
