@@ -207,7 +207,6 @@ namespace ExerciceListe
                     dico[letter.ToString()] = 1;
                 }
             }
-            
             foreach (var item in dico.Keys)
             {
                 Console.WriteLine($"il y a {dico[item]} fois le mot '{item}'");
